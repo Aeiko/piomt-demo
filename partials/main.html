@@ -1,0 +1,71 @@
+<fa-app class="full-screen">
+    <fa-header-footer-layout>
+    <fa-surface fa-background-color="'#37A4DB'"
+                fa-size="[undefined, 35]">
+        <div style="padding: 10px; color: #fff; text-align: center ">
+            Hello <b>User#265</b>, got a bill?
+        </div>
+    </fa-surface>
+        
+    <fa-grid-layout fa-options="myGridLayoutOptions">
+    <!-- Container modifier, which we're rotating over the y axis -->
+    <fa-modifier fa-origin="[.5, .45]" fa-rotate-y="rotateY.get()">
+
+        <!-- Front face -->
+        <fa-surface fa-size="[true, true]" fa-color="'rgb(255,255,250)'">
+            <img class="logo" src="images/famous-logo.svg" style="width: 200px; height: 200px;"/>
+        </fa-surface>
+
+        <!-- Back face:  same image, rotated pi radians -->
+        <fa-modifier fa-rotate-y="3.14159">
+            <fa-surface fa-size="[true, true]" fa-color="'rgb(255,255,250)'">
+                <img class="logo" src="images/famous-logo.svg" style="width: 200px; height: 200px;" />
+            </fa-surface>
+        </fa-modifier>
+    </fa-modifier>
+        
+    <fa-modifier>
+        <fa-surface>
+            <div style="text-align:center; padding: 10px;">
+                <h4><i>Attached Mobile Number:</i></h4>
+                <h1>+65 9822 8112</h1>
+                
+                <table style="text-align: center; width: 100%">
+                    <tr>
+                        <td colspan="3" style="background-color: #37A4DB; padding: 10px; color: #fff;">You have <b>3</b> on-going tabs of <b>$86</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><br></td>    
+                    </tr>
+                    <tr>
+                        <td>#1</td>
+                        <td>Ice Bar</td>
+                        <td>$34</td>
+                    </tr>
+                    <tr>
+                        <td>#2</td>
+                        <td>Bliss Bar</td>
+                        <td>$12</td>
+                    </tr>
+                    <tr>
+                        <td>#3</td>
+                        <td>Wonder Bar</td>
+                        <td>$40</td>
+                    </tr>
+                </table>
+            </div>
+        </fa-surface>    
+    </fa-modifier>
+    
+    </fa-grid-layout>
+    
+    <fa-modifier fa-opacity="0.75" fa-rotate-z="rotateText.get()">
+        <fa-surface fa-size="[undefined, 45]" fa-click="animateText()">
+            <div style="padding: 10px; font-size: 0.75rem; text-align: center ">
+                <b>[PIOMT]</b> PutItOnMyTab Prototype v0.1
+            </div>
+        </fa-surface>
+    </fa-modifier>
+        
+    </fa-header-footer-layout>
+</fa-app>
